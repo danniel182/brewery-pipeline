@@ -26,6 +26,7 @@ Para rodar o projeto, você precisa ter:
 │   └── gold/                   # Dados agregados
 ├── scripts/                    # Scripts PySpark de ETL
 ├── logs/                       # Logs do Airflow
+├── tests/                     # Testes unitarios simples
 ├── plugins/                   # Plugins customizados (opcional)
 ├── requirements.txt           # Dependências do projeto
 ├── .devcontainer/Dockerfile   # Imagem base customizada
