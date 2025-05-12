@@ -1,0 +1,31 @@
+[2025-05-12T07:30:32.579+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_brewery.aggregate_breweries manual__2025-05-12T07:30:24.903876+00:00 [queued]>
+[2025-05-12T07:30:32.582+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_brewery.aggregate_breweries manual__2025-05-12T07:30:24.903876+00:00 [queued]>
+[2025-05-12T07:30:32.583+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2025-05-12T07:30:32.588+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): aggregate_breweries> on 2025-05-12 07:30:24.903876+00:00
+[2025-05-12T07:30:32.589+0000] {standard_task_runner.py:57} INFO - Started process 1178 to run task
+[2025-05-12T07:30:32.591+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'etl_brewery', 'aggregate_breweries', 'manual__2025-05-12T07:30:24.903876+00:00', '--job-id', '13', '--raw', '--subdir', 'DAGS_FOLDER/brewery_pipeline.py', '--cfg-path', '/tmp/tmpjoqvfyil']
+[2025-05-12T07:30:32.592+0000] {standard_task_runner.py:85} INFO - Job 13: Subtask aggregate_breweries
+[2025-05-12T07:30:32.615+0000] {task_command.py:416} INFO - Running <TaskInstance: etl_brewery.aggregate_breweries manual__2025-05-12T07:30:24.903876+00:00 [running]> on host 4c9b00d60fe4
+[2025-05-12T07:30:32.643+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='etl_brewery' AIRFLOW_CTX_TASK_ID='aggregate_breweries' AIRFLOW_CTX_EXECUTION_DATE='2025-05-12T07:30:24.903876+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-05-12T07:30:24.903876+00:00'
+[2025-05-12T07:30:32.643+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-05-12T07:30:32.644+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'python3 /opt/***/scripts/aggregate_breweries.py']
+[2025-05-12T07:30:32.647+0000] {subprocess.py:86} INFO - Output:
+[2025-05-12T07:30:33.567+0000] {subprocess.py:93} INFO - Setting default log level to "WARN".
+[2025-05-12T07:30:33.567+0000] {subprocess.py:93} INFO - To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+[2025-05-12T07:30:33.696+0000] {subprocess.py:93} INFO - 25/05/12 07:30:33 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[2025-05-12T07:31:36.480+0000] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2025-05-12T07:31:36.488+0000] {subprocess.py:93} INFO -   File "/opt/***/scripts/aggregate_breweries.py", line 56, in <module>
+[2025-05-12T07:31:36.489+0000] {subprocess.py:93} INFO -     run()
+[2025-05-12T07:31:36.489+0000] {subprocess.py:93} INFO -   File "/opt/***/scripts/aggregate_breweries.py", line 23, in run
+[2025-05-12T07:31:36.490+0000] {subprocess.py:93} INFO -     raise TimeoutError(f"Timeout: {silver_path} não encontrado após {timeout} segundos.")
+[2025-05-12T07:31:36.490+0000] {subprocess.py:93} INFO - TimeoutError: Timeout: /opt/***/data_lake/silver/breweries não encontrado após 60 segundos.
+[2025-05-12T07:31:37.047+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2025-05-12T07:31:37.086+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/opt/airflow/.local/lib/python3.9/site-packages/airflow/operators/bash.py", line 210, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2025-05-12T07:31:37.099+0000] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=etl_brewery, task_id=aggregate_breweries, execution_date=20250512T073024, start_date=20250512T073032, end_date=20250512T073137
+[2025-05-12T07:31:37.115+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 13 for task aggregate_breweries (Bash command failed. The command returned a non-zero exit code 1.; 1178)
+[2025-05-12T07:31:37.156+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2025-05-12T07:31:37.183+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

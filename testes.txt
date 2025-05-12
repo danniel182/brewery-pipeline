@@ -1,0 +1,56 @@
+
+FROM openjdk:11-slim
+
+USER root
+RUN apt-get update && \
+    apt-get install -y python3 python3-pip wget procps && apt-get clean && \
+    wget https://archive.apache.org/dist/spark/spark-3.3.2/spark-3.3.2-bin-hadoop3.tgz && \
+    tar -xvzf spark-3.3.2-bin-hadoop3.tgz && \
+    mv spark-3.3.2-bin-hadoop3 /opt/spark && \
+    rm spark-3.3.2-bin-hadoop3.tgz && \
+    apt-get clean
+
+ENV SPARK_HOME=/opt/spark
+ENV PATH=$SPARK_HOME/bin:$JAVA_HOME/bin:$PATH
+
+WORKDIR /opt/airflow
+ENV HOME=/opt/airflow
+COPY requirements.txt /requirements.txt
+
+RUN apt-get update && apt-get install -y default-jdk
+ENV JAVA_HOME=/usr/local/openjdk-11
+ENV PATH=$JAVA_HOME/bin:$PATH
+
+RUN pip install -r /requirements.txt
+
+RUN mkdir -p /opt/airflow && chmod -R 777 /opt/airflow
+RUN mkdir -p /opt/airflow/.ivy2/local && chmod -R 777 /opt/airflow
+
+USER 50000
+
+
+
+
+
+
+
+FROM apache/airflow:2.7.3-python3.9
+
+USER root
+
+# Atualização e instalação de dependências adicionais (se necessário)
+RUN apt-get update && apt-get install -y \
+    gcc \
+    build-essential \
+    python3-pip \
+    libpq-dev \
+    curl \
+    && apt-get clean
+
+COPY requirements.txt /
+
+USER airflow
+
+# Instalação dos requisitos do projeto
+RUN pip install --upgrade pip \
+    && pip install --no-cache-dir -r /requirements.txt

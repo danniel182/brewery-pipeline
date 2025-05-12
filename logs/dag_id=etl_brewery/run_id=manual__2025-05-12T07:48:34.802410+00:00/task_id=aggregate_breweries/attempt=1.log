@@ -1,0 +1,20 @@
+[2025-05-12T07:48:39.943+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_brewery.aggregate_breweries manual__2025-05-12T07:48:34.802410+00:00 [queued]>
+[2025-05-12T07:48:39.948+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_brewery.aggregate_breweries manual__2025-05-12T07:48:34.802410+00:00 [queued]>
+[2025-05-12T07:48:39.948+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2025-05-12T07:48:39.954+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): aggregate_breweries> on 2025-05-12 07:48:34.802410+00:00
+[2025-05-12T07:48:39.958+0000] {standard_task_runner.py:57} INFO - Started process 1093 to run task
+[2025-05-12T07:48:39.960+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'etl_brewery', 'aggregate_breweries', 'manual__2025-05-12T07:48:34.802410+00:00', '--job-id', '7', '--raw', '--subdir', 'DAGS_FOLDER/brewery_pipeline.py', '--cfg-path', '/tmp/tmp9q9prw8v']
+[2025-05-12T07:48:39.961+0000] {standard_task_runner.py:85} INFO - Job 7: Subtask aggregate_breweries
+[2025-05-12T07:48:40.057+0000] {task_command.py:416} INFO - Running <TaskInstance: etl_brewery.aggregate_breweries manual__2025-05-12T07:48:34.802410+00:00 [running]> on host 0d8312ffa556
+[2025-05-12T07:48:40.118+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='etl_brewery' AIRFLOW_CTX_TASK_ID='aggregate_breweries' AIRFLOW_CTX_EXECUTION_DATE='2025-05-12T07:48:34.802410+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-05-12T07:48:34.802410+00:00'
+[2025-05-12T07:48:40.119+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-05-12T07:48:40.120+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'python3 /opt/***/scripts/aggregate_breweries.py']
+[2025-05-12T07:48:40.125+0000] {subprocess.py:86} INFO - Output:
+[2025-05-12T07:48:41.162+0000] {subprocess.py:93} INFO - Setting default log level to "WARN".
+[2025-05-12T07:48:41.164+0000] {subprocess.py:93} INFO - To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+[2025-05-12T07:48:41.307+0000] {subprocess.py:93} INFO - 25/05/12 07:48:41 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[2025-05-12T07:48:50.933+0000] {subprocess.py:93} INFO - [Stage 0:>                                                          (0 + 1) / 1]                                                                                [Stage 1:>                                                          (0 + 7) / 7][Stage 6:>                                                          (0 + 1) / 1]                                                                                Camada Gold salvas em: data_lake/gold/aggregatedByState, data_lake/gold/aggregatedByTopCity
+[2025-05-12T07:48:51.408+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-05-12T07:48:51.445+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=etl_brewery, task_id=aggregate_breweries, execution_date=20250512T074834, start_date=20250512T074839, end_date=20250512T074851
+[2025-05-12T07:48:51.495+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2025-05-12T07:48:51.562+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,32 @@
+[2025-05-12T07:56:37.018+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_brewery.extract_breweries manual__2025-05-12T07:56:35.830783+00:00 [queued]>
+[2025-05-12T07:56:37.022+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_brewery.extract_breweries manual__2025-05-12T07:56:35.830783+00:00 [queued]>
+[2025-05-12T07:56:37.023+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2025-05-12T07:56:37.028+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): extract_breweries> on 2025-05-12 07:56:35.830783+00:00
+[2025-05-12T07:56:37.031+0000] {standard_task_runner.py:57} INFO - Started process 1667 to run task
+[2025-05-12T07:56:37.032+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'etl_brewery', 'extract_breweries', 'manual__2025-05-12T07:56:35.830783+00:00', '--job-id', '9', '--raw', '--subdir', 'DAGS_FOLDER/brewery_pipeline.py', '--cfg-path', '/tmp/tmpfd_ab9yh']
+[2025-05-12T07:56:37.033+0000] {standard_task_runner.py:85} INFO - Job 9: Subtask extract_breweries
+[2025-05-12T07:56:37.062+0000] {task_command.py:416} INFO - Running <TaskInstance: etl_brewery.extract_breweries manual__2025-05-12T07:56:35.830783+00:00 [running]> on host 0d8312ffa556
+[2025-05-12T07:56:37.099+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='etl_brewery' AIRFLOW_CTX_TASK_ID='extract_breweries' AIRFLOW_CTX_EXECUTION_DATE='2025-05-12T07:56:35.830783+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-05-12T07:56:35.830783+00:00'
+[2025-05-12T07:56:37.100+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-05-12T07:56:37.101+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'python3 /opt/***/scripts/extract_breweries.py']
+[2025-05-12T07:56:37.106+0000] {subprocess.py:86} INFO - Output:
+[2025-05-12T07:56:37.381+0000] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2025-05-12T07:56:37.383+0000] {subprocess.py:93} INFO -   File "/opt/***/scripts/extract_breweries.py", line 27, in <module>
+[2025-05-12T07:56:37.383+0000] {subprocess.py:93} INFO -     run()
+[2025-05-12T07:56:37.384+0000] {subprocess.py:93} INFO -   File "/opt/***/scripts/extract_breweries.py", line 14, in run
+[2025-05-12T07:56:37.385+0000] {subprocess.py:93} INFO -     os.makedirs("/data_lake/bronze", exist_ok=True)
+[2025-05-12T07:56:37.385+0000] {subprocess.py:93} INFO -   File "/usr/lib/python3.9/os.py", line 215, in makedirs
+[2025-05-12T07:56:37.385+0000] {subprocess.py:93} INFO -     makedirs(head, exist_ok=exist_ok)
+[2025-05-12T07:56:37.385+0000] {subprocess.py:93} INFO -   File "/usr/lib/python3.9/os.py", line 225, in makedirs
+[2025-05-12T07:56:37.385+0000] {subprocess.py:93} INFO -     mkdir(name, mode)
+[2025-05-12T07:56:37.386+0000] {subprocess.py:93} INFO - PermissionError: [Errno 13] Permission denied: '/data_lake'
+[2025-05-12T07:56:37.401+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2025-05-12T07:56:37.413+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/opt/airflow/.local/lib/python3.9/site-packages/airflow/operators/bash.py", line 210, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2025-05-12T07:56:37.417+0000] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=etl_brewery, task_id=extract_breweries, execution_date=20250512T075635, start_date=20250512T075637, end_date=20250512T075637
+[2025-05-12T07:56:37.425+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 9 for task extract_breweries (Bash command failed. The command returned a non-zero exit code 1.; 1667)
+[2025-05-12T07:56:37.436+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2025-05-12T07:56:37.450+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

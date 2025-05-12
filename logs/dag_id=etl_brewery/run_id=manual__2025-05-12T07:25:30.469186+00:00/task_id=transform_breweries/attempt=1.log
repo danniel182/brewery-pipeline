@@ -1,0 +1,31 @@
+[2025-05-12T07:25:32.833+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_brewery.transform_breweries manual__2025-05-12T07:25:30.469186+00:00 [queued]>
+[2025-05-12T07:25:32.836+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_brewery.transform_breweries manual__2025-05-12T07:25:30.469186+00:00 [queued]>
+[2025-05-12T07:25:32.836+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2025-05-12T07:25:32.841+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): transform_breweries> on 2025-05-12 07:25:30.469186+00:00
+[2025-05-12T07:25:32.843+0000] {standard_task_runner.py:57} INFO - Started process 202 to run task
+[2025-05-12T07:25:32.846+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'etl_brewery', 'transform_breweries', 'manual__2025-05-12T07:25:30.469186+00:00', '--job-id', '7', '--raw', '--subdir', 'DAGS_FOLDER/brewery_pipeline.py', '--cfg-path', '/tmp/tmpyju84fsl']
+[2025-05-12T07:25:32.846+0000] {standard_task_runner.py:85} INFO - Job 7: Subtask transform_breweries
+[2025-05-12T07:25:32.866+0000] {task_command.py:416} INFO - Running <TaskInstance: etl_brewery.transform_breweries manual__2025-05-12T07:25:30.469186+00:00 [running]> on host 4c9b00d60fe4
+[2025-05-12T07:25:32.896+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='etl_brewery' AIRFLOW_CTX_TASK_ID='transform_breweries' AIRFLOW_CTX_EXECUTION_DATE='2025-05-12T07:25:30.469186+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-05-12T07:25:30.469186+00:00'
+[2025-05-12T07:25:32.897+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-05-12T07:25:32.897+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'python3 /opt/***/scripts/transform_breweries.py']
+[2025-05-12T07:25:32.902+0000] {subprocess.py:86} INFO - Output:
+[2025-05-12T07:25:33.850+0000] {subprocess.py:93} INFO - Setting default log level to "WARN".
+[2025-05-12T07:25:33.851+0000] {subprocess.py:93} INFO - To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+[2025-05-12T07:25:33.949+0000] {subprocess.py:93} INFO - 25/05/12 07:25:33 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[2025-05-12T07:25:34.531+0000] {subprocess.py:93} INFO - Traceback (most recent call last):
+[2025-05-12T07:25:34.531+0000] {subprocess.py:93} INFO -   File "/opt/***/scripts/transform_breweries.py", line 40, in <module>
+[2025-05-12T07:25:34.532+0000] {subprocess.py:93} INFO -     run()
+[2025-05-12T07:25:34.532+0000] {subprocess.py:93} INFO -   File "/opt/***/scripts/transform_breweries.py", line 13, in run
+[2025-05-12T07:25:34.532+0000] {subprocess.py:93} INFO -     files = sorted([f for f in os.listdir(bronze_dir) if f.endswith(".json")])
+[2025-05-12T07:25:34.532+0000] {subprocess.py:93} INFO - FileNotFoundError: [Errno 2] No such file or directory: 'data_lake/bronze'
+[2025-05-12T07:25:34.962+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2025-05-12T07:25:34.976+0000] {taskinstance.py:1937} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/opt/airflow/.local/lib/python3.9/site-packages/airflow/operators/bash.py", line 210, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2025-05-12T07:25:34.980+0000] {taskinstance.py:1400} INFO - Marking task as FAILED. dag_id=etl_brewery, task_id=transform_breweries, execution_date=20250512T072530, start_date=20250512T072532, end_date=20250512T072534
+[2025-05-12T07:25:34.987+0000] {standard_task_runner.py:104} ERROR - Failed to execute job 7 for task transform_breweries (Bash command failed. The command returned a non-zero exit code 1.; 202)
+[2025-05-12T07:25:34.997+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 1
+[2025-05-12T07:25:35.009+0000] {taskinstance.py:2778} INFO - 0 downstream tasks scheduled from follow-on schedule check

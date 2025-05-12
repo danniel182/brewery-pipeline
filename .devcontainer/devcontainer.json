@@ -1,0 +1,20 @@
+{
+    "name": "Airflow + Spark DEV",
+    "build": {
+        "dockerfile": "Dockerfile",
+        "context": ".."
+    },
+    "settings": {
+        "terminal.integrated.shell.linux": "/bin/bash"
+    },
+    "extensions": [
+        "ms-python.python",
+        "ms-azuretools.vscode-docker"
+    ],
+    "mounts": [
+        "source+${localWorkSpaceFolder}/data_lake,target=/opt/airflow/data_lake,type=bind",
+        "source+${localWorkSpaceFolder}/scripts,target=/opt/airflow/scripts,type=bind",
+        "source+${localWorkSpaceFolder}/dags,target=/opt/airflow/dags,type=bind"
+    ],
+    "postCreateCommand": "airflow db init"
+}

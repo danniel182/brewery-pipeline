@@ -1,0 +1,8 @@
+requests
+pyspark
+apache-airflow[celery,postgres]==2.7.3
+flask-session==0.4.0
+psycopg2-binary==2.9.9 
+pytest==7.4.3
+pytest-mock
+

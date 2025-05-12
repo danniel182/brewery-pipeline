@@ -1,0 +1,20 @@
+[2025-05-12T07:28:24.735+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: etl_brewery.transform_breweries manual__2025-05-12T07:28:23.229536+00:00 [queued]>
+[2025-05-12T07:28:24.738+0000] {taskinstance.py:1159} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: etl_brewery.transform_breweries manual__2025-05-12T07:28:23.229536+00:00 [queued]>
+[2025-05-12T07:28:24.738+0000] {taskinstance.py:1361} INFO - Starting attempt 1 of 1
+[2025-05-12T07:28:24.743+0000] {taskinstance.py:1382} INFO - Executing <Task(BashOperator): transform_breweries> on 2025-05-12 07:28:23.229536+00:00
+[2025-05-12T07:28:24.745+0000] {standard_task_runner.py:57} INFO - Started process 346 to run task
+[2025-05-12T07:28:24.747+0000] {standard_task_runner.py:84} INFO - Running: ['***', 'tasks', 'run', 'etl_brewery', 'transform_breweries', 'manual__2025-05-12T07:28:23.229536+00:00', '--job-id', '9', '--raw', '--subdir', 'DAGS_FOLDER/brewery_pipeline.py', '--cfg-path', '/tmp/tmphqh1hvgf']
+[2025-05-12T07:28:24.747+0000] {standard_task_runner.py:85} INFO - Job 9: Subtask transform_breweries
+[2025-05-12T07:28:24.766+0000] {task_command.py:416} INFO - Running <TaskInstance: etl_brewery.transform_breweries manual__2025-05-12T07:28:23.229536+00:00 [running]> on host 4c9b00d60fe4
+[2025-05-12T07:28:24.792+0000] {taskinstance.py:1662} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='etl_brewery' AIRFLOW_CTX_TASK_ID='transform_breweries' AIRFLOW_CTX_EXECUTION_DATE='2025-05-12T07:28:23.229536+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2025-05-12T07:28:23.229536+00:00'
+[2025-05-12T07:28:24.793+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-05-12T07:28:24.793+0000] {subprocess.py:75} INFO - Running command: ['/bin/bash', '-c', 'python3 /opt/***/scripts/transform_breweries.py']
+[2025-05-12T07:28:24.797+0000] {subprocess.py:86} INFO - Output:
+[2025-05-12T07:28:25.700+0000] {subprocess.py:93} INFO - Setting default log level to "WARN".
+[2025-05-12T07:28:25.701+0000] {subprocess.py:93} INFO - To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+[2025-05-12T07:28:25.832+0000] {subprocess.py:93} INFO - 25/05/12 07:28:25 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+[2025-05-12T07:28:29.915+0000] {subprocess.py:93} INFO - [Stage 1:>                                                          (0 + 1) / 1]                                                                                Dados transformados e salvos em: data_lake/silver/breweries
+[2025-05-12T07:28:30.368+0000] {subprocess.py:97} INFO - Command exited with return code 0
+[2025-05-12T07:28:30.409+0000] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=etl_brewery, task_id=transform_breweries, execution_date=20250512T072823, start_date=20250512T072824, end_date=20250512T072830
+[2025-05-12T07:28:30.465+0000] {local_task_job_runner.py:228} INFO - Task exited with return code 0
+[2025-05-12T07:28:30.486+0000] {taskinstance.py:2778} INFO - 1 downstream tasks scheduled from follow-on schedule check
