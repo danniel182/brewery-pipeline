@@ -1979,3 +1979,52 @@
 [2025-05-12T09:26:33.951+0000] {logging_mixin.py:154} INFO - [2025-05-12T09:26:33.951+0000] {dag.py:2941} INFO - Sync 1 DAGs
 [2025-05-12T09:26:33.960+0000] {logging_mixin.py:154} INFO - [2025-05-12T09:26:33.960+0000] {dag.py:3722} INFO - Setting next_dagrun for etl_brewery to None, run_after=None
 [2025-05-12T09:26:33.968+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/brewery_pipeline.py took 0.083 seconds
+[2025-05-12T09:27:04.217+0000] {processor.py:157} INFO - Started process (PID=54) to work on /opt/airflow/dags/brewery_pipeline.py
+[2025-05-12T09:27:04.218+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/brewery_pipeline.py for tasks to queue
+[2025-05-12T09:27:04.224+0000] {logging_mixin.py:154} INFO - [2025-05-12T09:27:04.223+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/brewery_pipeline.py
+[2025-05-12T09:27:04.243+0000] {processor.py:839} INFO - DAG(s) dict_keys(['etl_brewery']) retrieved from /opt/airflow/dags/brewery_pipeline.py
+[2025-05-12T09:27:04.284+0000] {logging_mixin.py:154} INFO - [2025-05-12T09:27:04.283+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-05-12T09:27:04.297+0000] {logging_mixin.py:154} INFO - [2025-05-12T09:27:04.297+0000] {dag.py:3722} INFO - Setting next_dagrun for etl_brewery to None, run_after=None
+[2025-05-12T09:27:04.307+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/brewery_pipeline.py took 0.094 seconds
+[2025-05-12T09:27:34.616+0000] {processor.py:157} INFO - Started process (PID=55) to work on /opt/airflow/dags/brewery_pipeline.py
+[2025-05-12T09:27:34.617+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/brewery_pipeline.py for tasks to queue
+[2025-05-12T09:27:34.619+0000] {logging_mixin.py:154} INFO - [2025-05-12T09:27:34.618+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/brewery_pipeline.py
+[2025-05-12T09:27:34.635+0000] {processor.py:839} INFO - DAG(s) dict_keys(['etl_brewery']) retrieved from /opt/airflow/dags/brewery_pipeline.py
+[2025-05-12T09:27:34.669+0000] {logging_mixin.py:154} INFO - [2025-05-12T09:27:34.669+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-05-12T09:27:34.678+0000] {logging_mixin.py:154} INFO - [2025-05-12T09:27:34.678+0000] {dag.py:3722} INFO - Setting next_dagrun for etl_brewery to None, run_after=None
+[2025-05-12T09:27:34.686+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/brewery_pipeline.py took 0.078 seconds
+[2025-05-12T09:28:05.030+0000] {processor.py:157} INFO - Started process (PID=56) to work on /opt/airflow/dags/brewery_pipeline.py
+[2025-05-12T09:28:05.031+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/brewery_pipeline.py for tasks to queue
+[2025-05-12T09:28:05.034+0000] {logging_mixin.py:154} INFO - [2025-05-12T09:28:05.034+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/brewery_pipeline.py
+[2025-05-12T09:28:05.050+0000] {processor.py:839} INFO - DAG(s) dict_keys(['etl_brewery']) retrieved from /opt/airflow/dags/brewery_pipeline.py
+[2025-05-12T09:28:05.079+0000] {logging_mixin.py:154} INFO - [2025-05-12T09:28:05.079+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-05-12T09:28:05.087+0000] {logging_mixin.py:154} INFO - [2025-05-12T09:28:05.087+0000] {dag.py:3722} INFO - Setting next_dagrun for etl_brewery to None, run_after=None
+[2025-05-12T09:28:05.098+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/brewery_pipeline.py took 0.072 seconds
+[2025-05-12T09:28:35.396+0000] {processor.py:157} INFO - Started process (PID=57) to work on /opt/airflow/dags/brewery_pipeline.py
+[2025-05-12T09:28:35.397+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/brewery_pipeline.py for tasks to queue
+[2025-05-12T09:28:35.399+0000] {logging_mixin.py:154} INFO - [2025-05-12T09:28:35.399+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/brewery_pipeline.py
+[2025-05-12T09:28:35.414+0000] {processor.py:839} INFO - DAG(s) dict_keys(['etl_brewery']) retrieved from /opt/airflow/dags/brewery_pipeline.py
+[2025-05-12T09:28:35.440+0000] {logging_mixin.py:154} INFO - [2025-05-12T09:28:35.439+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-05-12T09:28:35.448+0000] {logging_mixin.py:154} INFO - [2025-05-12T09:28:35.447+0000] {dag.py:3722} INFO - Setting next_dagrun for etl_brewery to None, run_after=None
+[2025-05-12T09:28:35.456+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/brewery_pipeline.py took 0.065 seconds
+[2025-05-12T09:29:05.743+0000] {processor.py:157} INFO - Started process (PID=58) to work on /opt/airflow/dags/brewery_pipeline.py
+[2025-05-12T09:29:05.744+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/brewery_pipeline.py for tasks to queue
+[2025-05-12T09:29:05.747+0000] {logging_mixin.py:154} INFO - [2025-05-12T09:29:05.747+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/brewery_pipeline.py
+[2025-05-12T09:29:05.763+0000] {processor.py:839} INFO - DAG(s) dict_keys(['etl_brewery']) retrieved from /opt/airflow/dags/brewery_pipeline.py
+[2025-05-12T09:29:05.788+0000] {logging_mixin.py:154} INFO - [2025-05-12T09:29:05.788+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-05-12T09:29:05.798+0000] {logging_mixin.py:154} INFO - [2025-05-12T09:29:05.798+0000] {dag.py:3722} INFO - Setting next_dagrun for etl_brewery to None, run_after=None
+[2025-05-12T09:29:05.807+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/brewery_pipeline.py took 0.068 seconds
+[2025-05-12T09:29:36.149+0000] {processor.py:157} INFO - Started process (PID=59) to work on /opt/airflow/dags/brewery_pipeline.py
+[2025-05-12T09:29:36.150+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/brewery_pipeline.py for tasks to queue
+[2025-05-12T09:29:36.152+0000] {logging_mixin.py:154} INFO - [2025-05-12T09:29:36.152+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/brewery_pipeline.py
+[2025-05-12T09:29:36.167+0000] {processor.py:839} INFO - DAG(s) dict_keys(['etl_brewery']) retrieved from /opt/airflow/dags/brewery_pipeline.py
+[2025-05-12T09:29:36.202+0000] {logging_mixin.py:154} INFO - [2025-05-12T09:29:36.202+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-05-12T09:29:36.211+0000] {logging_mixin.py:154} INFO - [2025-05-12T09:29:36.211+0000] {dag.py:3722} INFO - Setting next_dagrun for etl_brewery to None, run_after=None
+[2025-05-12T09:29:36.221+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/brewery_pipeline.py took 0.076 seconds
+[2025-05-12T09:30:06.606+0000] {processor.py:157} INFO - Started process (PID=60) to work on /opt/airflow/dags/brewery_pipeline.py
+[2025-05-12T09:30:06.607+0000] {processor.py:829} INFO - Processing file /opt/airflow/dags/brewery_pipeline.py for tasks to queue
+[2025-05-12T09:30:06.609+0000] {logging_mixin.py:154} INFO - [2025-05-12T09:30:06.609+0000] {dagbag.py:536} INFO - Filling up the DagBag from /opt/airflow/dags/brewery_pipeline.py
+[2025-05-12T09:30:06.624+0000] {processor.py:839} INFO - DAG(s) dict_keys(['etl_brewery']) retrieved from /opt/airflow/dags/brewery_pipeline.py
+[2025-05-12T09:30:06.663+0000] {logging_mixin.py:154} INFO - [2025-05-12T09:30:06.663+0000] {dag.py:2941} INFO - Sync 1 DAGs
+[2025-05-12T09:30:06.671+0000] {logging_mixin.py:154} INFO - [2025-05-12T09:30:06.671+0000] {dag.py:3722} INFO - Setting next_dagrun for etl_brewery to None, run_after=None
+[2025-05-12T09:30:06.680+0000] {processor.py:179} INFO - Processing /opt/airflow/dags/brewery_pipeline.py took 0.079 seconds
