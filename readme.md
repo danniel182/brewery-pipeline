@@ -89,6 +89,28 @@ flask-session
 
 O ambiente é baseado em python:3.9 e openjdk para suporte ao Spark.
 
+🧪 Testes e Tratamento de Erros (Em construção)
+Scripts incluem verificações de status da API, existência de diretórios e arquivos.
+
+Logs são registrados automaticamente via Airflow.
+
+Diretório tests/ contém scripts com testes simples de verificação das funções principais.
+
+Para rodar testes (dentro de um container com pytest instalado):
+
+docker compose run airflow-worker pytest
+🔔 Monitoramento e Alertas (visão futura)
+Para um ambiente de produção, recomenda-se configurar:
+
+Alertas por e-mail via Airflow em falhas de DAG.
+
+Verificações de qualidade de dados antes de salvar arquivos.
+
+Ferramentas externas como Prometheus + Grafana para monitorar tempo de execução e falhas.
+
+📝 Contribuições
+Sinta-se livre para abrir issues, sugerir melhorias ou criar pull requests. É um projeto aberto para aprendizados e melhorias contínuas.
+
 🛠️ Dicas e Comandos Úteis
 bash
 Copy
